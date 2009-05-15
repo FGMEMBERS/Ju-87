@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="ju87-jsbsim-cnf.xml"> -->
+<PropertyList include="ju87-yasim-cnf.xml">
+
+  <sim>
+    <description>Junker Ju 87 Stuka (Yasim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+
