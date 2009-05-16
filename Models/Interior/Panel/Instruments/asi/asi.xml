@@ -40,12 +40,16 @@
     <type>rotate</type>
     <object-name>needle</object-name>
     <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-    <factor>1.852</factor> <!-- kts to km/h -->
-    <interpolation>
-      <entry><ind>   0.00 </ind><dep>   0 </dep></entry>
-      <entry><ind>  86.95 </ind><dep>  26 </dep></entry>
-      <entry><ind> 608.69 </ind><dep> 334 </dep></entry>
-    </interpolation>   
+      <interpolation>
+       <entry><ind>   0 </ind><dep>   0.0 </dep></entry>
+       <entry><ind>  27 </ind><dep>  12.5 </dep></entry> <!--  50 km/h -->
+       <entry><ind>  54 </ind><dep>  46.0 </dep></entry> <!-- 100 km/h -->
+       <entry><ind>  81 </ind><dep>  94.0 </dep></entry> <!-- 150 km/h -->
+       <entry><ind> 108 </ind><dep> 154.0 </dep></entry> <!-- 200 km/h -->
+       <entry><ind> 135 </ind><dep> 219.0 </dep></entry> <!-- 250 km/h -->
+       <entry><ind> 162 </ind><dep> 284.5 </dep></entry> <!-- 300 km/h -->
+       <entry><ind> 189 </ind><dep> 350.0 </dep></entry> <!-- 350 km/h -->
+      </interpolation>
     <axis>
       <x> -1 </x>
       <y>  0 </y>

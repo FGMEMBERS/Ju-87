@@ -500,20 +500,17 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <type>translate</type>
     <object-name>Canopy</object-name>
     <property>/instrumentation/doors/crew/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1 </ind><dep> -95 </dep></entry>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.7 </dep></entry>
     </interpolation>
     <axis>
-      <x1-m> -1.704 </x1-m>
-      <y1-m>  0.383 </y1-m>
-      <z1-m>  0.744 </z1-m>
-      <x2-m> -1.012 </x2-m>
-      <y2-m>  0.377 </y2-m>
-      <z2-m>  0.723 </z2-m>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
