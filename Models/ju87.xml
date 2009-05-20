@@ -41,6 +41,9 @@
     <object-name>helicesirene</object-name>
     <object-name>echappes</object-name>
     <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>freins</object-name>
+    <object-name>barres</object-name>
 
     <!-- draw this at last (order critical!) -->
     <object-name>vitres</object-name>
@@ -97,6 +100,9 @@
     <object-name>helicesirene</object-name>
     <object-name>echappes</object-name>
     <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>freins</object-name>
+    <object-name>barres</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>

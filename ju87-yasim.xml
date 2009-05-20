@@ -9,7 +9,7 @@
      wingspan         : 13.80 m      (     45 ft  3.30 in)
      Length           : 11.10 m      (     36 ft  1.07 in)
      height           :  4.23 m      (     13 ft 10.53 in)
-     Speed            :   380 km/h   (    205 kts )
+     Speed            :   359 km/h   (    194 kts )
      Empty Weight     :  3205 kg     (  7,086 lb  )
      Ceiling          :  8200 m      ( 26,903 ft  )
      Engine           : Jumo Ju 211J (  V12 inv.  ) 2300 RPM - 1200 cv
@@ -22,15 +22,13 @@
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="1.0"/>
-    <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
-  <cruise speed="205" alt="22000">
+  <cruise speed="194" alt="10000">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.2"/>
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
-    <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
 
   <cockpit x="1.528" y="0" z="1.049"/>
@@ -42,7 +40,7 @@
         length="6.360"
         taper="0.30"
         dihedral="5"
-        camber="0.235">
+        camber="0.155">
         <stall aoa="14" width="4" peak="1.5"/>
         <flap0 start="0.032" end="0.438" lift="1.5" drag="1.2"/>
         <flap1 start="0.438" end="0.906" lift="1.2" drag="1.3"/>
@@ -86,33 +84,36 @@
   </vstab>
 
   <!-- Engines   source            : http://fr.wikipedia.org/wiki/Junkers_Jumo_211
+                                     http://www.techno-science.net/?onglet=glossaire&definition=154
 
                  name              : Jumo Ju 211J
                  type              : liquid-cooled inverted-vee V12 engine
-                 weight            : 1,290 lb (585 kg)
+                 power max         : 1420 hp at 2600 rpm
+                 power cruise      :  960 hp at 2250 rpm
+                 weight            : 1587 lb (720 kg)
                  Displacement      : 2,135.2 in3 (34.99 l)
-                 Compression       : 6.5:1
+                 Compression       : 6.56:1
                  Propeller diameter: 3.4 m (11 ft 1.85 in)
 
-                                          Rayon * Rayon * Mass(kg)   1.7 * 1.7 * 585
-                 moment d'après la doc : ________________________ = ________________ = 563.55
+                                          Rayon * Rayon * Mass(kg)   1.7 * 1.7 * 720
+                 moment d'après la doc : ________________________ = ________________ = 693.6
                                                      3                      3
   -->
   <propeller   x="3.823" y="0" z="0.245"
                radius="1.7"
-               mass="1290"
-               moment="563.55"
-               cruise-alt="22000"
-               cruise-power="1000"
-               cruise-speed="205"
-               cruise-rpm="2100"
-               min-rpm="583"
+               mass="1587"
+               moment="120"
+               cruise-alt="10000"
+               cruise-power="960"
+               cruise-speed="194"
+               cruise-rpm="2250"
+               min-rpm="220"
                max-rpm="2300"
                gear-ratio="0.645">
                <actionpt x="5" y="0" z="0.242"/>
                <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
                <piston-engine eng-power="1200"
-                              eng-rpm="2300"
+                              eng-rpm="2600"
                               displacement="2135.2"
                               compression="6.5">
                               <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
@@ -123,39 +124,27 @@
   </propeller>
 
   <gear x="2.644" y="1.636" z="-1.941"
-        compression="0.2"
-        retract-time="7">
+        compression="0.2">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
-        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-        <control-speed control="EXTEND" transition-time="6.2"/>
-        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
 
   <gear x="2.644" y="-1.636" z="-1.941"
-        compression="0.2" 
-        retract-time="7">
+        compression="0.2">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
-        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-        <control-speed control="EXTEND" transition-time="6"/>
-        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
 
   <gear x="-4.619" y="0.0" z="-0.448"
-        compression="0.2"
-        retract-time="7">
+        compression="0.2">
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0=".25" dst1="-.25"/>
-        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-        <control-speed control="EXTEND" transition-time="7"/>
-        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
   </gear>
 
-  <tank x="4.101" y="0" z="-0.355" capacity="884"/>
-  <tank x="1.431" y="2.767" z="-0.355" capacity="559"/>
+  <tank x="1.431" y="2.767" z="-0.355" capacity="570"/>
+  <tank x="4.101" y="0.000" z="-0.355" capacity="884"/>
   <tank x="1.431" y="-2.767" z="-0.355" capacity="570"/>
 
   <!-- CG théorique x=1.302 y=0 z=-0.293 -->
-  <ballast x="1.1" y="0" z="0" mass="1000"/>
+  <ballast x="1.0" y="0" z="0" mass="1000"/>
 
 </airplane>

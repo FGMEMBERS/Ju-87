@@ -1,3 +1,3 @@
-aircraft.livery.init("Aircraft/TBM-Avenger/Models/Liveries");
+aircraft.livery.init("Aircraft/Ju-87/Models/Liveries");
 
 
