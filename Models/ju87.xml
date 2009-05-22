@@ -44,6 +44,7 @@
     <object-name>sousair</object-name>
     <object-name>freins</object-name>
     <object-name>barres</object-name>
+    <object-name>rebords</object-name>
 
     <!-- draw this at last (order critical!) -->
     <object-name>vitres</object-name>
@@ -103,6 +104,7 @@
     <object-name>sousair</object-name>
     <object-name>freins</object-name>
     <object-name>barres</object-name>
+    <object-name>rebords</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
