@@ -150,6 +150,16 @@
     </offsets>
   </model>
 
+  <!-- Bomb/Torpedo add by David HAREL thanks to him -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/bomb.xml</path>
+    <offsets>
+      <x-m> -1.565 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.434 </z-m>
+    </offsets>
+  </model>
+
   <!-- L'hélice --> 
   <animation>
     <name>HeliceComplete</name>

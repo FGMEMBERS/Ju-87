@@ -20,5 +20,44 @@
     </binding>
   </key>
 
+  <key n="32">
+    <name>SPACE</name>
+    <desc>Gun Trigger</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/armament/trigger</property>
+      <value>true</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/armament/trigger</property>
+        <value>false</value>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="5">
+    <name>Ctrl-e</name>
+    <desc>Drop Torpedo</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/armament/station/release-all</property>
+      <value>1</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>sim/multiplay/generic/int[6]</property>
+      <value>0</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/armament/station/release-all</property>
+        <value>0</value>
+      </binding>
+    </mod-up>
+  </key>
+
 </PropertyList>
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>bomb.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>sc250</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[6]</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>

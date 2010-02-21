@@ -21,6 +21,11 @@
       </livery>
     </model>
 
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Ju-87/Models/Effects/submodels.xml</path>
+    </submodels>
+
     <startup>
       <splash-texture>Aircraft/Ju-87/ju87-splash.png</splash-texture>
     </startup>
@@ -34,18 +39,27 @@
         <int type="int">0</int>
         <int type="int">0</int>
         <int type="int">0</int>
+        <int type="int">1</int>
       </generic>
     </multiplay>
 
     <help>
-      <title>GRUMANN TBM ju87</title>
+      <title>Junker Ju 87 Stuka</title>
       <key>
         <name>D</name>
         <desc>Open/Close bombs bay</desc>
       </key>
       <key>
-        <name>e (temporary)</name>
-        <desc>Open/Close wings</desc>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>Space</name>
+        <desc>Guns fire</desc>
+      </key>
+      <key>
+        <name>Ctrl e</name>
+        <desc>Drop Torpedo</desc>
       </key>
     </help>
 

@@ -9,7 +9,7 @@ A little history
 Junker Ju 87 "Stuka"
 ====================
 
-Manufacturer                  : Junke
+Manufacturer                  : Junker
 Type                          : 
 Year                          : 
 Powerplant                    : 
@@ -24,14 +24,19 @@ Crew                          :
 Some useful keys:
 =================
 
-D : Open/Close bombs bay
+d      : Open/Close canopy
+Space  : Fire guns
+Ctrl e : Drop bomb
 
 Thanks
 ======
 
+David HAREL for system guns and bomb
+
 ===============
 BARANGER Emmanuel
 May, 15, 2009
+Febrary, 22, 2010
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
@@ -62,15 +67,19 @@ Equipage                      :
 Quelques touches utiles :
 =========================
 
-D : Ouverture/Fermeture de la soute à bombes
+d      : Ouverture/Fermeture de verrière
+Espace : Tir des mitrailleuses
+Ctrl e : Lacher la bombe
 
 Remerciements
 =============
 
+David HAREL pour le système d'arme et de bombe.
+
 ===============
 BARANGER Emmanuel
 15 Mai 2009.
+22 Fevrier 2010.
 
 http://helijah.free.fr/flightgear/hangar.htm
 embaranger@free.fr
-
