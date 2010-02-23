@@ -31,7 +31,7 @@ Ctrl e : Drop bomb
 Thanks
 ======
 
-David HAREL for system guns and bomb
+Rex LACTAOEN for system guns and bomb
 
 ===============
 BARANGER Emmanuel
@@ -74,7 +74,7 @@ Ctrl e : Lacher la bombe
 Remerciements
 =============
 
-David HAREL pour le système d'arme et de bombe.
+Rex LACTAOEN pour le système d'arme et de bombe.
 
 ===============
 BARANGER Emmanuel
