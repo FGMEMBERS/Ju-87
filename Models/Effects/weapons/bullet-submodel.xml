@@ -5,7 +5,7 @@
 
   <submodel>
     <name>bullet splash</name>
-    <model>Aircraft/Ju-87/Models/Effects/flack.xml</model>
+    <model>Aircraft/Ju-87/Models/Effects/weapons/flack.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>

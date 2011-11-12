@@ -7,7 +7,7 @@
     <desc>Bomber bay</desc>
     <binding>
       <command>nasal</command>
-      <script>ju87.doorsystem.passengerexport();</script>
+      <script>doors.doorsystem.passengerexport();</script>
     </binding>
   </key>
 
@@ -16,12 +16,12 @@
     <desc>Crew door</desc>
     <binding>
       <command>nasal</command>
-      <script>ju87.doorsystem.crewexport();</script>
+      <script>doors.doorsystem.crewexport();</script>
     </binding>
   </key>
 
-  <key n="32">
-    <name>SPACE</name>
+  <key n="101">
+    <name>e</name>
     <desc>Gun Trigger</desc>
     <binding>
       <command>property-assign</command>
@@ -48,7 +48,7 @@
     <binding>
       <command>property-assign</command>
       <property>sim/multiplay/generic/int[6]</property>
-      <value>0</value>
+      <value>false</value>
     </binding>
     <mod-up>
       <binding>

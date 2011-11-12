@@ -5,7 +5,7 @@
   <!-- Gauche centre -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/Ju-87/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/Ju-87/Models/Effects/weapons/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -25,7 +25,7 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/Ju-87/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/Ju-87/Models/Effects/weapons/bullet-submodel.xml</submodel-path>
   </submodel>
 
  <submodel>
@@ -50,14 +50,14 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/Ju-87/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/Ju-87/Models/Effects/weapons/bullet-submodel.xml</submodel-path>
   </submodel>
 
 
   <!-- Droite centre -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/Ju-87/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/Ju-87/Models/Effects/weapons/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -77,7 +77,7 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/Ju-87/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/Ju-87/Models/Effects/weapons/bullet-submodel.xml</submodel-path>
   </submodel>
 
 <submodel>
@@ -102,12 +102,12 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/Ju-87/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/Ju-87/Models/Effects/weapons/bullet-submodel.xml</submodel-path>
   </submodel>
 
  <submodel>
     <name>bomb</name>
-    <model>Aircraft/Ju-87/Models/Effects/bomb.ac</model>
+    <model>Aircraft/Ju-87/Models/Effects/weapons/bomb.ac</model>
     <trigger>controls/armament/station/release-all</trigger>
     <speed>0</speed>
     <repeat>false</repeat>

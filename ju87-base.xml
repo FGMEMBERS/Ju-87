@@ -23,7 +23,7 @@
 
     <submodels> 
       <serviceable type="bool">true</serviceable>
-      <path>Aircraft/Ju-87/Models/Effects/submodels.xml</path>
+      <path>Aircraft/Ju-87/Models/Effects/weapons/submodels.xml</path>
     </submodels>
 
     <startup>
@@ -32,14 +32,21 @@
 
     <multiplay>
       <chat_display>1</chat_display>
-      <generic>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">0</int>
-        <int type="int">1</int>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
       </generic>
     </multiplay>
 
@@ -54,7 +61,7 @@
         <desc>Open/Close canopy</desc>
       </key>
       <key>
-        <name>Space</name>
+        <name>e</name>
         <desc>Guns fire</desc>
       </key>
       <key>
@@ -66,6 +73,10 @@
     <menubar include="Dialogs/ju87-menu.xml"/>
 
   </sim>
+
+  <input>
+    <keyboard include="Nasal/ju87-keyboard.xml"/>
+  </input>
 
   <engines>
     <engine n="0">
@@ -87,13 +98,11 @@
     </fuel>
   </consumables>
 
-  <input>
-    <keyboard include="Nasal/ju87-keyboard.xml"/>
-  </input>
-
   <nasal>
-    <ju87>
+    <doors>
       <file>Aircraft/Ju-87/Nasal/doors.nas</file>
+    </doors>
+    <ju87>
       <file>Aircraft/Ju-87/Nasal/liveries.nas</file>
       <file>Aircraft/Ju-87/Nasal/light.nas</file>
     </ju87>

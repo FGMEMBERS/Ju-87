@@ -7,15 +7,6 @@
     <type>normal</type>
     <texture>smoke.png</texture>
 
-    <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg>   0.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
-    </offsets>
-
     <condition>
       <property>controls/armament/trigger</property>
     </condition>

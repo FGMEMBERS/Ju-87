@@ -26,7 +26,7 @@
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>shader.png</texture>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>intvitres</object-name>
     <object-name>intverrieretransp</object-name>
   </animation>
@@ -38,9 +38,6 @@
       <x-m> -1.501 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  0.626 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -51,9 +48,6 @@
       <x-m> -2.075 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  0.595 </z-m>
-      <roll-deg>     0 </roll-deg>
-      <pitch-deg>    0 </pitch-deg>
-      <heading-deg>  0 </heading-deg>
     </offsets>
   </model>
 

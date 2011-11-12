@@ -10,7 +10,7 @@
     <condition>
       <equals>
         <property>sim/multiplay/generic/int[6]</property>
-        <value>1</value>
+        <value>true</value>
       </equals>
     </condition>
   </animation>
