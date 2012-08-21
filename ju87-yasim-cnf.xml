@@ -1,17 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-************************************************************************
-TBM ju87 FDM YASim
-BARANGER Emmanuel                                                   2008
-************************************************************************
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList include="ju87-base.xml">
 
   <sim>
+
     <description>GRUMANN TBM ju87 (Yasim)</description>
     <flight-model>yasim</flight-model>
     <aero>ju87-yasim</aero>
+
   </sim>
 
 </PropertyList>

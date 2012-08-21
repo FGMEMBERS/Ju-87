@@ -6,7 +6,7 @@
 
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/JU-87/Models/Liveries", 10);
+      var livery_update = aircraft.livery_update.new("Aircraft/Ju-87/Models/Liveries", 10);
 
       var self = cmdarg();
 
@@ -48,18 +48,20 @@
     <object-name>antenne</object-name>
     <object-name>piedsirene</object-name>
     <object-name>bolsirene</object-name>
-    <object-name>helicesirene</object-name>
     <object-name>echappes</object-name>
     <object-name>verriere</object-name>
     <object-name>sousair</object-name>
-    <object-name>freins</object-name>
     <object-name>barres</object-name>
     <object-name>rebords</object-name>
+    <object-name>guns</object-name>
 
+    <object-name>trous</object-name>
+    <object-name>freins</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>helice</object-name>
+    <object-name>helicesirene</object-name>
 
     <!-- draw this at last (order critical!) -->
     <object-name>vitres</object-name>
@@ -86,39 +88,29 @@
     <object-name>direction</object-name>
     <object-name>ajouts</object-name>
     <object-name>ajoutsprof</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
-    <object-name>helice</object-name>
     <object-name>caches</object-name>
     <object-name>pieds</object-name>
     <object-name>antenne</object-name>
     <object-name>piedsirene</object-name>
     <object-name>bolsirene</object-name>
-    <object-name>helicesirene</object-name>
     <object-name>echappes</object-name>
     <object-name>verriere</object-name>
     <object-name>sousair</object-name>
-    <object-name>freins</object-name>
     <object-name>barres</object-name>
     <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+
+    <object-name>trous</object-name>
+    <object-name>freins</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicesirene</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
@@ -130,12 +122,36 @@
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>bol</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>ajoutsprof</object-name>
+    <object-name>caches</object-name>
+    <object-name>pieds</object-name>
+    <object-name>antenne</object-name>
+    <object-name>piedsirene</object-name>
+    <object-name>bolsirene</object-name>
+    <object-name>echappes</object-name>
+    <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>barres</object-name>
+    <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+  </effect>
 
   <animation>
     <type>shader</type>
@@ -157,8 +173,12 @@
 
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Ju-87/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.310 </z-m>
+    </offsets>
   </model>
 
   <!-- Interior -->
@@ -172,7 +192,7 @@
     <offsets>
       <x-m> -1.565 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m>  0.084 </z-m>
+      <z-m> -0.468 </z-m>
     </offsets>
   </model>
 
@@ -443,14 +463,14 @@
     <type>rotate</type>
     <object-name>direction</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor> 13 </factor>
+    <factor> -13 </factor>
     <center>
       <x-m> 4.903 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.279 </z-m>
     </center>
     <axis>
-      <x> 0 </x>ju87
+      <x> 0 </x>
       <y> 0 </y>
       <z> 1 </z>
     </axis>
