@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!-- Interiors inspired by Patrizio MELIS : http://www.blendswap.com/blends/view/67668 -->
+
 <PropertyList>
 
   <path>interior.ac</path>
@@ -10,8 +12,23 @@
     <object-name>intverriere</object-name>
     <object-name>intverriere2</object-name>
     <object-name>inttourverriere</object-name>
-    <object-name>inttour</object-name>
-
+    <object-name>inttour</object-name>   
+    <object-name>separation</object-name>
+    <object-name>structure</object-name>
+    
+    <object-name>seat</object-name>
+    <object-name>yoke</object-name>
+    <object-name>right</object-name>
+    <object-name>left</object-name>
+    <object-name>padels</object-name>
+    <object-name>blocs</object-name>   
+    <object-name>manette1</object-name>
+    <object-name>manette2</object-name>
+    <object-name>manette3</object-name>
+    <object-name>manette4</object-name>
+    <object-name>manette5</object-name>
+    <object-name>manette6</object-name>
+    
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
     <object-name>intverrieretransp</object-name>
@@ -31,6 +48,16 @@
     <object-name>intverrieretransp</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intverrieretransp</object-name>
+  </effect>
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/Ju-87/Models/Pilot/pilot.xml</path>
@@ -38,6 +65,17 @@
       <x-m> -1.501 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  0.626 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Gunner -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -0.20 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  0.59 </z-m>
+      <heading-deg> 180 </heading-deg>
     </offsets>
   </model>
 
@@ -51,6 +89,18 @@
     </offsets>
   </model>
 
+   <!-- Gun -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Weapons/guns.xml</path>
+    <offsets>
+      <x-m> 0.502 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.820 </z-m>
+      <pitch-deg>   -15 </pitch-deg>
+      <heading-deg>  15 </heading-deg>
+    </offsets>
+  </model>
+
   <!-- Canopy -->
   <animation>
     <name>IntCanopy</name>
@@ -60,9 +110,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>IntCanopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>translate</type>
     <object-name>IntCanopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.7 </dep></entry>

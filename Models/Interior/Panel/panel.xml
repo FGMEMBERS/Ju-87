@@ -71,4 +71,33 @@
     </offsets>
   </model>
 
+  <!-- Manettes -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Interior/Panel/Instruments/manettes/manette.xml</path>
+    <offsets>
+      <x-m>  0.15909 </x-m>
+      <y-m> -0.32305 </y-m>
+      <z-m> -0.05389 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Interior/Panel/Instruments/manettes/manette.xml</path>
+    <offsets>
+      <x-m>  0.15909 </x-m>
+      <y-m>  0.32295 </y-m>
+      <z-m> -0.11589 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Interior/Panel/Instruments/collimator/collimator.xml</path>
+    <offsets>
+      <x-m> 0.12424 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.34329 </z-m>
+      <pitch-deg> 15 </pitch-deg>
+    </offsets>
+  </model>
+
 </PropertyList>

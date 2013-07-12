@@ -4,9 +4,10 @@
 
   <sim include="Nasal/views.xml">
 
+    <description>Junker Ju 87 Stuka (Yasim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
     <status>devel</status>
-    <author>BARANGER Emmanuel</author>
-
+    
     <fuel-fraction>1.0</fuel-fraction>
 
     <sound>
@@ -111,4 +112,3 @@
   </nasal>
 
 </PropertyList>
-

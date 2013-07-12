@@ -159,7 +159,7 @@
   <tank x="4.101" y="0.000" z="-0.355" capacity="884"/>
   <tank x="1.431" y="-2.767" z="-0.355" capacity="570"/>
 
-  <!-- CG theorique x=1.302 y=0 z=-0.293 -->
+  <!-- Mass displacment -->
   <ballast x="1.0" y="0" z="0" mass="1000"/>
 
 </airplane>

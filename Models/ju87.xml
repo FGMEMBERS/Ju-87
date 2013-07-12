@@ -59,6 +59,7 @@
     <object-name>freins</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
     <object-name>helice</object-name>
     <object-name>helicesirene</object-name>
@@ -104,6 +105,7 @@
     <object-name>freins</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
     <object-name>helice</object-name>
     <object-name>helicesirene</object-name>
@@ -126,6 +128,41 @@
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>bol</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>ajoutsprof</object-name>
+    <object-name>caches</object-name>
+    <object-name>pieds</object-name>
+    <object-name>antenne</object-name>
+    <object-name>piedsirene</object-name>
+    <object-name>bolsirene</object-name>
+    <object-name>echappes</object-name>
+    <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>barres</object-name>
+    <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
@@ -171,6 +208,20 @@
     <object-name>verrieretransp</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblursirene</object-name>
+    <object-name>propdiscsirene</object-name>
+    <object-name>verrieretransp</object-name>
+  </effect>
+
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Ju-87/Models/shadow.xml</path>
@@ -183,8 +234,15 @@
 
   <!-- Interior -->
   <model>
+    <name>Interieur</name>
     <path>Aircraft/Ju-87/Models/Interior/interior.xml</path>
   </model>
+
+  <!-- For Rembrandt-->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
 
   <!-- Bomb/Torpedo add by David HAREL thanks to him -->
   <model>
@@ -636,9 +694,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>Canopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.7 </dep></entry>
@@ -650,5 +722,50 @@
     </axis>
   </animation>
 
-</PropertyList>
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 4.38601 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 1.91893 </z-m>
+    </offsets>
+  </model>
 
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m> -2.13595 </x-m>
+      <y-m> -6.81850 </y-m>
+      <z-m>  0.49817 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -2.13118 </x-m>
+      <y-m> -6.81851 </y-m>
+      <z-m>  0.49815 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m> -2.13595 </x-m>
+      <y-m>  6.81850 </y-m>
+      <z-m>  0.49817 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -2.13118 </x-m>
+      <y-m>  6.81851 </y-m>
+      <z-m>  0.49815 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
