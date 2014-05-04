@@ -10,8 +10,8 @@
      Length           : 11.10 m      (     36 ft  1.07 in)
      height           :  4.23 m      (     13 ft 10.53 in)
      Speed            :   359 km/h   (    194 kts )
-     Empty Weight     :  3205 kg     (  7,086 lb  )
-     Ceiling          :  8200 m      ( 26,903 ft  )
+     Empty Weight     :  3205 kg     (   7086 lb  )
+     Ceiling          :  8200 m      (  26903 ft  )
      Engine           : Jumo Ju 211J (  V12 inv.  ) 2300 RPM - 1200 cv
 -->
 
@@ -110,51 +110,51 @@
                  power max         : 1420 hp at 2600 rpm
                  power cruise      :  960 hp at 2250 rpm
                  weight            : 1587 lb (720 kg)
-                 Displacement      : 2,135.2 in3 (34.99 l)
+                 Displacement      : 2135.2 in3 (34.99 l)
                  Compression       : 6.56:1
                  Propeller diameter: 3.4 m (11 ft 1.85 in)
   -->
-  <propeller   x="3.823" y="0" z="0.245"
-               radius="1.5"
-               mass="1587"
-               moment="120"
-               cruise-alt="10000"
-               cruise-power="960"
-               cruise-speed="194"
-               cruise-rpm="2250"
-               min-rpm="220"
-               max-rpm="2300"
-               gear-ratio="0.645">
-               <actionpt x="5" y="0" z="0.242"/>
-               <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
-               <piston-engine eng-power="1200"
-                              eng-rpm="2600"
-                              displacement="2135.2"
-                              compression="6.5">
-                              <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
-                              <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
-                              <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
-                              <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
-               </piston-engine>
+  <propeller x="3.823" y="0" z="0.245"
+             mass="1587"
+             radius="1.5"
+             moment="120"
+             cruise-alt="10000"
+             cruise-power="960"
+             cruise-speed="194"
+             cruise-rpm="2250"
+             min-rpm="220"
+             max-rpm="2300"
+             gear-ratio="0.645">
+             <actionpt x="5" y="0" z="0.242"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
+             <piston-engine eng-power="1200"
+                            eng-rpm="2600"
+                            displacement="2135.2"
+                            compression="6.5">
+                            <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                            <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                            <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             </piston-engine>
   </propeller>
 
-  <gear x="2.644" y="1.636" z="-1.941"
+  <gear x="2.64364" y="1.58553" z="-1.94106"
         compression="0.2">
-        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
-
-  <gear x="2.644" y="-1.636" z="-1.941"
+  
+  <gear x="2.64364" y="-1.58553" z="-1.94106"
         compression="0.2">
-        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
-
-  <gear x="-4.619" y="0.0" z="-0.448"
+  
+  <gear x="-4.61945" y="0" z="-0.44798"
         compression="0.2">
-        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0=".25" dst1="-.25"/>
+    <control-input axis="/controls/flight/rudder" control="STEER" src0="-1" src1="1" dst0="0.25" dst1="-0.25"/>
   </gear>
-
+  
   <tank x="1.431" y="2.767" z="-0.355" capacity="570"/>
   <tank x="4.101" y="0.000" z="-0.355" capacity="884"/>
   <tank x="1.431" y="-2.767" z="-0.355" capacity="570"/>

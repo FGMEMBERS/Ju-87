@@ -42,21 +42,9 @@
     <desc>Drop Torpedo</desc>
     <binding>
       <command>property-assign</command>
-      <property>controls/armament/station/release-all</property>
-      <value>1</value>
+      <property>controls/signal</property>
+      <value>true</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/int[6]</property>
-      <value>false</value>
-    </binding>
-    <mod-up>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/armament/station/release-all</property>
-        <value>0</value>
-      </binding>
-    </mod-up>
   </key>
 
 </PropertyList>

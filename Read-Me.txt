@@ -1,4 +1,4 @@
-English/Français
+English/FranÃ§ais
 
 [English]
 ----------
@@ -25,7 +25,7 @@ Some useful keys:
 =================
 
 d      : Open/Close canopy
-Space  : Fire guns
+e      : Fire guns
 Ctrl e : Drop bomb
 
 Thanks
@@ -37,12 +37,14 @@ Rex LACTAOEN for system guns and bomb
 BARANGER Emmanuel
 May, 15, 2009
 Febrary, 22, 2010
+May, 04, 2014
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
-[Français]
+[FranÃ§ais]
 ----------
 
 Un peu d'histoire
@@ -53,33 +55,35 @@ Junker Ju 87 "Stuka"
 
 Constructeur                  : Junker
 Type                          : 
-Année                         : 
+AnnÃ©e                         : 
 Moteur                        : 
 Envergure                     : 
 Longueur                      : 
 Hauteur                       : 
-Poids estimé au décollage     : 
-Vitesse estimée de croisière  : 
-Autonomie estimée             : 
+Poids estimÃ© au dÃ©collage     : 
+Vitesse estimÃ©e de croisiÃ¨re  : 
+Autonomie estimÃ©e             : 
 Equipage                      : 
 
 
 Quelques touches utiles :
 =========================
 
-d      : Ouverture/Fermeture de verrière
-Espace : Tir des mitrailleuses
+d      : Ouverture/Fermeture de verriÃ¨re
+e      : Tir des mitrailleuses
 Ctrl e : Lacher la bombe
 
 Remerciements
 =============
 
-Rex LACTAOEN pour le système d'arme et de bombe.
+Rex LACTAOEN pour le systÃ¨me d'arme et de bombe.
 
 ===============
 BARANGER Emmanuel
-15 Mai 2009.
-22 Fevrier 2010.
+15 Mai 2009
+22 Fevrier 2010
+04 Mai 2014
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr

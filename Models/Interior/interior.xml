@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- Interiors inspired by Patrizio MELIS : http://www.blendswap.com/blends/view/67668 -->
-
 <PropertyList>
 
   <path>interior.ac</path>
@@ -34,30 +33,19 @@
     <object-name>intverrieretransp</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>intvitres</object-name>
-    <object-name>intverrieretransp</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>intvitres</object-name>
-    <object-name>intverrieretransp</object-name>
-  </animation>
-
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/Ju-87/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intverrieretransp</object-name>
   </effect>
-
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>intvitres</object-name>
+    <object-name>intverrieretransp</object-name>
+  </effect>
+  
   <!-- Pilote -->
   <model>
     <path>Aircraft/Ju-87/Models/Pilot/pilot.xml</path>
@@ -139,4 +127,3 @@
   </animation>
 
 </PropertyList>
-

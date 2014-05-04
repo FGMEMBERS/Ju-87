@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var wing_door = self.getNode("sim/model/door-positions/wing/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -54,8 +54,10 @@
     <object-name>barres</object-name>
     <object-name>rebords</object-name>
     <object-name>guns</object-name>
-
+    <object-name>guns2</object-name>
+    
     <object-name>trous</object-name>
+    <object-name>accroche</object-name>
     <object-name>freins</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
@@ -100,8 +102,10 @@
     <object-name>barres</object-name>
     <object-name>rebords</object-name>
     <object-name>guns</object-name>
-
+    <object-name>guns2</object-name>
+    
     <object-name>trous</object-name>
+    <object-name>accroche</object-name>
     <object-name>freins</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
@@ -118,19 +122,10 @@
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
@@ -156,96 +151,110 @@
     <object-name>barres</object-name>
     <object-name>rebords</object-name>
     <object-name>guns</object-name>
+    <object-name>guns2</object-name>
   </effect>
-
-  <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletG1</object-name>
-    <object-name>voletG2</object-name>
-    <object-name>voletD1</object-name>
-    <object-name>voletD2</object-name>
-    <object-name>bol</object-name>
-    <object-name>derive</object-name>
-    <object-name>profondeur</object-name>
-    <object-name>direction</object-name>
-    <object-name>ajouts</object-name>
-    <object-name>ajoutsprof</object-name>
-    <object-name>caches</object-name>
-    <object-name>pieds</object-name>
-    <object-name>antenne</object-name>
-    <object-name>piedsirene</object-name>
-    <object-name>bolsirene</object-name>
-    <object-name>echappes</object-name>
-    <object-name>verriere</object-name>
-    <object-name>sousair</object-name>
-    <object-name>barres</object-name>
-    <object-name>rebords</object-name>
-    <object-name>guns</object-name>
-  </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-    <object-name>verrieretransp</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblursirene</object-name>
-    <object-name>propdiscsirene</object-name>
-    <object-name>verrieretransp</object-name>
-  </animation>
 
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/Ju-87/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
-    <object-name>propblursirene</object-name>
-    <object-name>propdiscsirene</object-name>
     <object-name>verrieretransp</object-name>
   </effect>
-
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>verrieretransp</object-name>
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Ju-87/Models/shadow.xml</path>
     <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.310 </z-m>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.3 </z-m>
     </offsets>
   </model>
 
+  <!-- Guns effects -->  
+  <!-- Mode 1 -->
+  <model>
+    <name>GunLeftMode1</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -2.68907 </x-m>
+      <y-m> -2.12498 </y-m>
+      <z-m> -0.12796 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>GunRightMode1</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -2.68907 </x-m>
+      <y-m>  2.12498 </y-m>
+      <z-m> -0.12796 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Mode 2 -->
+  <model>
+    <name>GunLeftMode2</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -4.74101 </x-m>
+      <y-m> -1.95465 </y-m>
+      <z-m> -0.81176 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>GunRightMode2</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -4.74101 </x-m>
+      <y-m>  1.95465 </y-m>
+      <z-m> -0.81176 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>guns</object-name>
+    <object-name>freins</object-name>
+    <object-name>GunLeftMode1</object-name>
+    <object-name>GunRightMode1</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/guns</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>guns2</object-name>
+    <object-name>GunLeftMode2</object-name>
+    <object-name>GunRightMode2</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/guns</property>
+        <value>2</value>
+      </equals>
+    </condition>
+  </animation>
+  
   <!-- Interior -->
   <model>
-    <name>Interieur</name>
     <path>Aircraft/Ju-87/Models/Interior/interior.xml</path>
   </model>
 
-  <!-- For Rembrandt-->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
-
   <!-- Bomb/Torpedo add by David HAREL thanks to him -->
   <model>
+    <name>Torpedo</name>
     <path>Aircraft/Ju-87/Models/Effects/weapons/bomb.xml</path>
     <offsets>
       <x-m> -1.565 </x-m>
@@ -253,6 +262,17 @@
       <z-m> -0.468 </z-m>
     </offsets>
   </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Torpedo</object-name>
+    <condition>
+      <equals>
+        <property>controls/signal</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
 
   <!-- Cranking effects -->
   <!-- Left -->
@@ -412,6 +432,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -478,12 +504,18 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteSirene</object-name>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
     <factor> 8 </factor>
     <center>
-      <x-m> -2.518 </x-m>
-      <y-m> -1.636 </y-m>
-      <z-m> -0.655 </z-m>
+      <x-m> -2.52207 </x-m>
+      <y-m> -1.58600 </y-m>
+      <z-m> -0.65488 </z-m>
     </center>
     <axis>
       <x> -1 </x>

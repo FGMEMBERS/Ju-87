@@ -17,5 +17,3 @@ testUS87texture : Junkers 87 Captured; USAAF Tunisia, 1943
 These liveries were made by : Herve 2012
 
 Thanks to him.
-
-

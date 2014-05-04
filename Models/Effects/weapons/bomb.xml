@@ -7,16 +7,16 @@
   <animation>
     <object-name>sc250</object-name>
   </animation>
-
+<!--  
   <animation>
     <type>select</type>
     <object-name>sc250</object-name>
     <condition>
       <equals>
-        <property>sim/multiplay/generic/int[6]</property>
-        <value>true</value>
+        <property>controls/signal</property>
+        <value>false</value>
       </equals>
     </condition>
   </animation>
-
+-->
 </PropertyList>
