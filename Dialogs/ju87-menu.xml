@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>Junker Ju 87</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Guns mode 1</label>
+        <binding>
+          <command>property-assign</command>
+          <property>/sim/model/guns</property>
+          <value>1</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>sim/multiplay/generic/float[11]</property>
+          <value>1</value>
+        </binding>
+      </item>
+      <item>
+        <label>Guns mode 2</label>
+        <binding>
+          <command>property-assign</command>
+          <property>/sim/model/guns</property>
+          <value>2</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>sim/multiplay/generic/float[11]</property>
+          <value>2</value>
+        </binding>
+      </item>
+      <!--
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>ju87.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+-->
+    </menu>
+  </default>
+
+</PropertyList>
+

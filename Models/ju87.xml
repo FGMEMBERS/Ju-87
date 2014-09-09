@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ju87.ac</path>
+
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/Ju-87/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var wing_door = self.getNode("sim/model/door-positions/wing/position-norm", 1);
+      
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
+    </load>
+
+    <unload>
+      livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
+    </unload>
+  </nasal>
+
+  <animation>
+    <!-- draw these first (in no particular order) -->
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>bol</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>ajoutsprof</object-name>
+    <object-name>caches</object-name>
+    <object-name>pieds</object-name>
+    <object-name>antenne</object-name>
+    <object-name>piedsirene</object-name>
+    <object-name>bolsirene</object-name>
+    <object-name>echappes</object-name>
+    <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>barres</object-name>
+    <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+    <object-name>guns2</object-name>
+    
+    <object-name>trous</object-name>
+    <object-name>accroche</object-name>
+    <object-name>freins</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicesirene</object-name>
+
+    <!-- draw this at last (order critical!) -->
+    <object-name>vitres</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblursirene</object-name>
+    <object-name>propdiscsirene</object-name>
+    <object-name>verrieretransp</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>bol</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>ajoutsprof</object-name>
+    <object-name>caches</object-name>
+    <object-name>pieds</object-name>
+    <object-name>antenne</object-name>
+    <object-name>piedsirene</object-name>
+    <object-name>bolsirene</object-name>
+    <object-name>echappes</object-name>
+    <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>barres</object-name>
+    <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+    <object-name>guns2</object-name>
+    
+    <object-name>trous</object-name>
+    <object-name>accroche</object-name>
+    <object-name>freins</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeA</object-name>
+    <object-name>roueA</object-name>
+    <object-name>helice</object-name>
+    <object-name>helicesirene</object-name>
+
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>texture.png</texture>
+    <specular>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
+    </specular>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>bol</object-name>
+    <object-name>derive</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>ajouts</object-name>
+    <object-name>ajoutsprof</object-name>
+    <object-name>caches</object-name>
+    <object-name>pieds</object-name>
+    <object-name>antenne</object-name>
+    <object-name>piedsirene</object-name>
+    <object-name>bolsirene</object-name>
+    <object-name>echappes</object-name>
+    <object-name>verriere</object-name>
+    <object-name>sousair</object-name>
+    <object-name>barres</object-name>
+    <object-name>rebords</object-name>
+    <object-name>guns</object-name>
+    <object-name>guns2</object-name>
+  </effect>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Ju-87/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>verrieretransp</object-name>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>verrieretransp</object-name>
+  </effect>
+  
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Ju-87/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.3 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Guns effects -->  
+  <!-- Mode 1 -->
+  <model>
+    <name>GunLeftMode1</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -2.68907 </x-m>
+      <y-m> -2.12498 </y-m>
+      <z-m> -0.12796 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>GunRightMode1</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -2.68907 </x-m>
+      <y-m>  2.12498 </y-m>
+      <z-m> -0.12796 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Mode 2 -->
+  <model>
+    <name>GunLeftMode2</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -4.74101 </x-m>
+      <y-m> -1.95465 </y-m>
+      <z-m> -0.81176 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <name>GunRightMode2</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/fire.xml</path>
+    <offsets>
+      <x-m> -4.74101 </x-m>
+      <y-m>  1.95465 </y-m>
+      <z-m> -0.81176 </z-m>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>guns</object-name>
+    <object-name>freins</object-name>
+    <object-name>GunLeftMode1</object-name>
+    <object-name>GunRightMode1</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/guns</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>guns2</object-name>
+    <object-name>GunLeftMode2</object-name>
+    <object-name>GunRightMode2</object-name>
+    <condition>
+      <equals>
+        <property>sim/model/guns</property>
+        <value>2</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <!-- Interior -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- Bomb/Torpedo add by David HAREL thanks to him -->
+  <model>
+    <name>Torpedo</name>
+    <path>Aircraft/Ju-87/Models/Effects/weapons/bomb.xml</path>
+    <offsets>
+      <x-m> -1.565 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.468 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Torpedo</object-name>
+    <condition>
+      <equals>
+        <property>controls/signal</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.549 </x-m>
+      <y-m> -0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.399 </x-m>
+      <y-m> -0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.003 </x-m>
+      <y-m> -0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.707 </x-m>
+      <y-m> -0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Right -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.549 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.399 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -4.003 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/cranking/cranking.xml</path>
+    <offsets>
+      <x-m> -3.707 </x-m>
+      <y-m>  0.470 </y-m>
+      <z-m>  0.084 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.644 </x-m>
+      <y-m> -1.636 </y-m>
+      <z-m> -1.941 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -2.644 </x-m>
+      <y-m>  1.636 </y-m>
+      <z-m> -1.941 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Patte de queue -->
+  <model>
+    <path>Aircraft/Ju-87/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  4.619 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.448 </z-m>
+    </offsets>
+  </model>
+
+  <!-- L'hélice --> 
+  <animation>
+    <name>HeliceComplete</name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+    <object-name>helice</object-name>
+    <object-name>bol</object-name>
+  </animation>
+
+  <!-- Séléction de l'objet visible en fonction des rpm -->
+  <animation>
+    <type>select</type>
+    <object-name>propdisc</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>propblur</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>600.000</value>
+      </greater-than>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500.001</value>
+      </less-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>helice</object-name>
+    <condition>
+      <less-than>
+        <property>engines/engine[0]/rpm</property>
+        <value>1500</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
+    <property>engines/engine[0]/rpm</property>
+    <factor> 1 </factor>
+    <center>
+      <x-m> -5.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.245 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- L'hélice de la sirène --> 
+  <animation>
+    <name>HeliceCompleteSirene</name>
+    <object-name>propdiscsirene</object-name>
+    <object-name>propblursirene</object-name>
+    <object-name>helicesirene</object-name>
+    <object-name>bolsirene</object-name>
+  </animation>
+
+  <!-- Séléction de l'objet visible en fonction de la vitesse -->
+  <animation>
+    <type>select</type>
+    <object-name>propdiscsirene</object-name>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>200</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>propblursirene</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>100.000</value>
+      </greater-than>
+      <less-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>200.001</value>
+      </less-than>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>helicesirene</object-name>
+    <condition>
+      <less-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value>150</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>HeliceCompleteSirene</object-name>
+    <condition>
+      <greater-than>
+        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
+    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <factor> 8 </factor>
+    <center>
+      <x-m> -2.52207 </x-m>
+      <y-m> -1.58600 </y-m>
+      <z-m> -0.65488 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Gouvernes de profondeur -->
+  <animation>
+    <name>ProfondeurTotal</name>
+    <object-name>profondeur</object-name>
+    <object-name>ajoutsprof</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ProfondeurTotal</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> 20 </factor>
+    <center>
+      <x-m> 4.413 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.736 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Gouverne de direction -->
+  <animation>
+    <type>rotate</type>
+    <object-name>direction</object-name>
+    <property>surface-positions/rudder-pos-norm</property>
+    <factor> -13 </factor>
+    <center>
+      <x-m> 4.903 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.279 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <!-- Animations des ailerons -->
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronG</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -0.75 </ind><dep> -15.0 </dep></entry>
+      <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
+      <entry><ind>  0.75 </ind><dep>  15.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -1.591 </x1-m>
+      <y1-m> -6.692 </y1-m>
+      <z1-m>  0.430 </z1-m>
+      <x2-m> -0.706 </x2-m>
+      <y2-m> -4.227 </y2-m>
+      <z2-m>  0.018 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>aileronD</object-name>
+    <property>surface-positions/right-aileron-pos-norm</property>
+    <interpolation>
+      <entry><ind> -0.75 </ind><dep> -15.0 </dep></entry>
+      <entry><ind>  0.00 </ind><dep>   0.0 </dep></entry>
+      <entry><ind>  0.75 </ind><dep>  15.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -0.706 </x1-m>
+      <y1-m>  4.227 </y1-m>
+      <z1-m>  0.018 </z1-m>
+      <x2-m> -1.591 </x2-m>
+      <y2-m>  6.692 </y2-m>
+      <z2-m>  0.430 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Volets -->
+  <animation>
+    <type>rotate</type>
+    <object-name>voletG1</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x1-m> -0.114 </x1-m>
+      <y1-m> -1.546 </y1-m>
+      <z1-m> -0.438 </z1-m>
+      <x2-m>  0.175 </x2-m>
+      <y2-m> -0.635 </y2-m>
+      <z2-m> -0.218 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletG2</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x1-m> -0.690 </x1-m>
+      <y1-m> -4.165 </y1-m>
+      <z1-m> -0.018 </z1-m>
+      <x2-m> -0.150 </x2-m>
+      <y2-m> -1.667 </y2-m>
+      <z2-m> -0.438 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletD1</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x1-m>  0.175 </x1-m>
+      <y1-m>  0.635 </y1-m>
+      <z1-m> -0.218 </z1-m>
+      <x2-m> -0.114 </x2-m>
+      <y2-m>  1.546 </y2-m>
+      <z2-m> -0.438 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>voletD2</object-name>
+    <property>surface-positions/flaps-pos-norm</property>
+    <factor> 60 </factor>
+    <axis>
+      <x1-m> -0.150 </x1-m>
+      <y1-m>  1.667 </y1-m>
+      <z1-m> -0.438 </z1-m>
+      <x2-m> -0.690 </x2-m>
+      <y2-m>  4.165 </y2-m>
+      <z2-m> -0.018 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Rotation des roues lors du roulage -->
+  <animation>
+    <type>spin</type>
+    <object-name>roueG</object-name>
+    <property>gear/gear[0]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -2.644 </x-m>
+      <y-m> -1.636 </y-m>
+      <z-m> -1.535 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueD</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m> -2.644 </x-m>
+      <y-m>  1.636 </y-m>
+      <z-m> -1.535 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>roueA</object-name>
+    <property>gear/gear[1]/rollspeed-ms</property>
+    <factor> 30 </factor>
+    <center>
+      <x-m>  4.619 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.312 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Canopy -->
+  <animation>
+    <name>Canopy</name>
+    <object-name>verriere</object-name>
+    <object-name>verrieretransp</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Canopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Canopy</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.7 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 4.38601 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 1.91893 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m> -2.13595 </x-m>
+      <y-m> -6.81850 </y-m>
+      <z-m>  0.49817 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -2.13118 </x-m>
+      <y-m> -6.81851 </y-m>
+      <z-m>  0.49815 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m> -2.13595 </x-m>
+      <y-m>  6.81850 </y-m>
+      <z-m>  0.49817 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Ju-87/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -2.13118 </x-m>
+      <y-m>  6.81851 </y-m>
+      <z-m>  0.49815 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

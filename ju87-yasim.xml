@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Junker Ju 87 Stuka - 2009 Emmanuel BARANGER
+
+     source           : http://en.wikipedia.org/wiki/Junkers_Ju_87
+
+     Junker ju87 Stuka
+
+     wingspan         : 13.80 m      (     45 ft  3.30 in)
+     Length           : 11.10 m      (     36 ft  1.07 in)
+     height           :  4.23 m      (     13 ft 10.53 in)
+     Speed            :   359 km/h   (    194 kts )
+     Empty Weight     :  3205 kg     (   7086 lb  )
+     Ceiling          :  8200 m      (  26903 ft  )
+     Engine           : Jumo Ju 211J (  V12 inv.  ) 2300 RPM - 1200 cv
+-->
+
+<airplane mass="7086">
+
+  <approach speed="80" aoa="8">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  </approach>
+
+  <cruise speed="194" alt="10000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.2"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  </cruise>
+
+  <cockpit x="1.528" y="0" z="1.049"/>
+
+  <fuselage ax="4.825" ay="0" az="0.245" bx="-5.575" by="0" bz="0.245" width="0.956" taper="0.5" midpoint="0.5"/>
+
+  <mstab x="1.023" y="0.447" z="-0.019"
+        chord="3.186"
+        length="1.25"
+        taper="0.88"
+        dihedral="-14"
+        sweep="-9.8"
+        camber="0.155">
+        <stall aoa="14" width="4" peak="1.5"/>
+        <flap0 start="0.032" end="1" lift="1.5" drag="1.2"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+  </mstab>
+
+  <wing x="1.231" y="1.670" z="-0.299"
+        chord="2.813"
+        length="5.2"
+        taper="0.30"
+        dihedral="9"
+        sweep="-8"
+        camber="0.155">
+        <stall aoa="14" width="4" peak="1.5"/>
+        <flap0 start="0" end="0.5" lift="1.5" drag="1.2"/>
+        <flap1 start="0.5" end="1" lift="1.2" drag="1.3"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-speed control="FLAP0" transition-time="5"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <hstab x="-4.200" y="0" z="0.737"
+         chord="1.088"
+         length="2.461"
+         taper="1">
+         <stall aoa="14" width="14" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.8" drag="1.8"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-4.610" y="0" z="0.460"
+         chord="1.9"
+         length="1.5"
+         taper="0.70"
+         sweep="10">
+         <stall aoa="16" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- Engines   source            : http://fr.wikipedia.org/wiki/Junkers_Jumo_211
+                                     http://www.techno-science.net/?onglet=glossaire&definition=154
+
+                 name              : Jumo Ju 211J
+                 type              : liquid-cooled inverted-vee V12 engine
+                 power max         : 1420 hp at 2600 rpm
+                 power cruise      :  960 hp at 2250 rpm
+                 weight            : 1587 lb (720 kg)
+                 Displacement      : 2135.2 in3 (34.99 l)
+                 Compression       : 6.56:1
+                 Propeller diameter: 3.4 m (11 ft 1.85 in)
+  -->
+  <propeller x="3.823" y="0" z="0.245"
+             mass="1587"
+             radius="1.5"
+             moment="120"
+             cruise-alt="10000"
+             cruise-power="960"
+             cruise-speed="194"
+             cruise-rpm="2250"
+             min-rpm="220"
+             max-rpm="2300"
+             gear-ratio="0.645">
+             <actionpt x="5" y="0" z="0.242"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
+             <piston-engine eng-power="1200"
+                            eng-rpm="2600"
+                            displacement="2135.2"
+                            compression="6.5">
+                            <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                            <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                            <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             </piston-engine>
+  </propeller>
+
+  <gear x="2.64364" y="1.58553" z="-1.94106"
+        compression="0.2">
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+  
+  <gear x="2.64364" y="-1.58553" z="-1.94106"
+        compression="0.2">
+    <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+  
+  <gear x="-4.61945" y="0" z="-0.44798"
+        compression="0.2">
+    <control-input axis="/controls/flight/rudder" control="STEER" src0="-1" src1="1" dst0="0.25" dst1="-0.25"/>
+  </gear>
+  
+  <tank x="1.431" y="2.767" z="-0.355" capacity="570"/>
+  <tank x="4.101" y="0.000" z="-0.355" capacity="884"/>
+  <tank x="1.431" y="-2.767" z="-0.355" capacity="570"/>
+
+  <!-- Mass displacment -->
+  <ballast x="1.0" y="0" z="0" mass="1000"/>
+
+</airplane>

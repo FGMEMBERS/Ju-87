@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>bomb.ac</path>
+
+  <animation>
+    <object-name>sc250</object-name>
+  </animation>
+<!--  
+  <animation>
+    <type>select</type>
+    <object-name>sc250</object-name>
+    <condition>
+      <equals>
+        <property>controls/signal</property>
+        <value>false</value>
+      </equals>
+    </condition>
+  </animation>
+-->
+</PropertyList>
