@@ -16,6 +16,21 @@
       <model type="int">   4 </model>
     </rating>
 
+    <tags>
+      <tag>junkers</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>fixed-gear</tag>
+      <tag>single-engine</tag>
+      <tag>propeller</tag>
+      <tag>bomber</tag>
+      <tag>piston</tag>
+      <tag>1930s</tag>
+      <tag>1940s</tag>
+      <tag>ww2</tag>
+    </tags>
+     
+
   </sim>
 
 </PropertyList>
